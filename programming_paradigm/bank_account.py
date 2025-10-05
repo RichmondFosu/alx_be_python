@@ -8,18 +8,18 @@ class BankAccount:
         amount = float(amount)
         if amount > 0:
             self.account_balance += amount
-            print(f"Deposited: ${amount:.1f}")
+            return True
         else:
-            print("Deposit amount must be positive.")
+            return False
 
     def withdraw(self, amount):
         """Withdraw money if sufficient funds exist."""
         amount = float(amount)
         if amount > self.account_balance:
-            print("Insufficient funds.")
+            return False
         else:
             self.account_balance -= amount
-            print(f"Withdrew: ${amount:.1f}")
+            return True
 
     def display_balance(self):
         """Print the current balance in a user-friendly format."""
