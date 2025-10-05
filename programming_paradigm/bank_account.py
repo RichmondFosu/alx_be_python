@@ -5,9 +5,10 @@ class BankAccount:
 
     def deposit(self, amount):
         """Deposit money into the account if the amount is positive."""
+        amount = float(amount)
         if amount > 0:
-            self.account_balance += float(amount)
-            return f"Deposited: ${amount:.2f}"
+            self.account_balance += amount
+            return f"Deposited: ${amount:.1f}"
         else:
             return "Deposit amount must be positive."
 
@@ -18,7 +19,7 @@ class BankAccount:
             return "Insufficient funds."
         else:
             self.account_balance -= amount
-            return f"Withdrew: ${amount:.2f}"
+            return f"Withdrew: ${amount:.1f}"
 
     def display_balance(self):
         """Return the current balance in a user-friendly format."""
